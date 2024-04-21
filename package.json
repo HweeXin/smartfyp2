@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "icacls \"node_modules\\nodemon\\bin\\nodemon.js\" /reset",
     "start": "nodemon server.js"
   },
   "author": "",
