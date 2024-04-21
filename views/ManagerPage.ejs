@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/Manager.css">
+</head>
+<body>
+    <div id="managerpage">
+        <h1 onclick="document.location='/homepage'">Manager Homepage</h1>
+    </div>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">back</a>
+        <a href="#" onclick="document.location='/logout'" id="logout">Logout</a>
+        <a href="#" onclick="document.location='/resetpassword'">Reset Password</a>
+    </div>
+    <button class="openbtn" onclick="openNav()" id="settingsbtn"><img src="img/settings.png" class="image1"></button>
+    <script>
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+    </script>
+    <div id="options">
+
+        <h1>What would you like to do?</h1><br>
+
+        <div class="container">
+            <h2>Employee Management</h2>
+            <table>
+                <td><button id="manager_createchoose" onclick="document.location='/createmanagerchoose'"><img src="img/create.png" class="image"><h3>Create</h3></button></td>
+                <td><button id="manager_viewchoose" onclick="document.location='/viewmanagerchoose'"><img src="img/view_all.png" class="image"><h3>View</h3></button></td>
+                <td><button id="manager_searchchoose" onclick="document.location='/searchfiltermanagerchoose'"><img src="img/search.png" class="image"><h3>Search/Filter</h3></button></td>
+                <td><button id="manager_updatechoose" onclick="document.location='/updatemanagerchoose'"><img src="img/update.png" class="image"><h3>Update</h3></button></td>
+                <td><button id="manager_deletechoose" onclick="document.location='/deletemanagerchoose'"><img src="img/delete.png" class="image"><h3>Delete</h3></button></td>
+                <td><button id="manager_rejectapprove" onclick="document.location='/rejectapprovemanagerchoose'"><img src="img/decision-making.png" class="image"><h3>Reject/Approve Leaves</h3></button></td>
+            </table>
+
+            <h2>Work Shift Management</h2>
+            <table>
+                <td><button id="managermanualassignemployees" onclick="document.location='/managermanualassignemployees'"><img src="img/customize.png" class="image"><h3>Manual Assign Employees</h3></button></td>
+                <td><button id="managerautoassignemployees" onclick="document.location='/managerautoassignemp'"><img src="img/automatic.png" class="image"><h3>Auto-Assign Employees</h3></button></td>
+                <td><button id="managerautoassignemployees" onclick="document.location='/managerviewcalender'"><img src="img/automatic.png" class="image"><h3>View Workshift(Calender)</h3></button></td>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

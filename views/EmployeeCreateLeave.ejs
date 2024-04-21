@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/CreateWorkShift.css">
+    <style>
+        /* Reset default margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Center the form horizontally */
+        #options {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Set the minimum height of the container to full viewport height */
+        }
+
+        .container {
+            width: 80%; /* Set the width of the form container */
+        }
+
+        /* Optional: Add styles to the form elements */
+        form fieldset {
+            /* Example styles */
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="managerpage">
+        <h1>Welcome to Employee Dashboard</h1>
+    </div>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">back</a>
+        <a href="#" onclick="document.location='/logout'" id="logout">Logout</a>
+        <a href="#" onclick="document.location='/resetpassword'">Reset Password</a>
+    </div>
+    <button class="openbtn" onclick="openNav()" id="settingsbtn"><img src="img/settings.png" class="image1"></button>
+    <script>
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+
+        function goBack() {
+            // Add functionality to go back
+            window.history.back();
+        }
+
+    </script>
+    <div id="options">
+        <div class="container">
+            <h1>Create Leave</h1>
+            <% if (message.length > 0) { %>
+                <div><%= message %></div>
+            <% } %>
+            <form action="/employee_createLeave" method="POST">
+                <fieldset>
+                    <legend>Enter Leave Details</legend>
+                    <label for="date">Date:</label><br>
+                    <input type="date" id="date" name="date"><br><br>
+                    <label for="leavetype">Leave Type:</label><br>
+                    <select id="leavetype" name="leavetype">
+                        <option value="sick">Sick Leave</option>
+                        <option value="vacation">Vacation Leave</option>
+                        <option value="maternity">Maternity Leave</option>
+                        <option value="maternity">Regular Leave</option>
+                    </select><br><br>
+                    <button type="submit" name="create">Create</button>
+                    <button type="button" name="back" onclick="goBack()">Back</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
